@@ -1,7 +1,7 @@
 # NG Wizi Bulma
 
-[![npm](https://img.shields.io/npm/v/@wizishop/ng-wizi-bulma.svg)](https://www.npmjs.com/package/@wizishop/ng-wizi-bulma)
-[![npm](https://img.shields.io/npm/dm/@wizishop/ng-wizi-bulma.svg)](https://www.npmjs.com/package/@wizishop/ng-wizi-bulma)
+[![npm](https://img.shields.io/npm/v/@oengus/ng-wizi-bulma.svg)](https://www.npmjs.com/package/@oengus/ng-wizi-bulma)
+[![npm](https://img.shields.io/npm/dm/@oengus/ng-wizi-bulma.svg)](https://www.npmjs.com/package/@oengus/ng-wizi-bulma)
 
 [Bulma](http://bulma.io/) components for Angular 15+
 
@@ -16,7 +16,7 @@ Try out the [demo](https://ng-wizi-bulma.firebaseapp.com/)
 Run:
 
 ```sh
-npm i -S @wizishop/ng-wizi-bulma bulma bulma-extensions @angular/cdk
+npm i -S @oengus/ng-wizi-bulma bulma bulma-extensions @angular/cdk
 ```
 
 Import bulma (and needed extensions) scss into your main scss file:
@@ -31,7 +31,7 @@ Import bulma (and needed extensions) scss into your main scss file:
 After Bulma, import ng-wizi-bulma scss into your main scss file allowing you to custom all variable from bulma:
 
 ```scss
-@import 'node_modules/@wizishop/ng-wizi-bulma/ng-wizi-bulma';
+@import 'node_modules/@oengus/ng-wizi-bulma/ng-wizi-bulma';
 ```
 
 Load the Fontawesome icon font in your index.html.
@@ -50,7 +50,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 
-import {NwbAllModule} from '@wizishop/ng-wizi-bulma';
+import {NwbAllModule} from '@oengus/ng-wizi-bulma';
 
 @NgModule({
   imports: [

@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/@wizishop/ng-wizi-bulma",
+  "dest": "../../dist/@oengus/ng-wizi-bulma",
   "lib": {
     "entryFile": "src/public_api.ts"
   }

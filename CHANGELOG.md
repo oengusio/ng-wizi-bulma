@@ -34,7 +34,7 @@
 
 ## Breaking changes
 
-In your main scss file, replace `@import '~@wizishop/ng-wizi-bulma/ng-wizi-bulma';` with `@import 'node_modules/@wizishop/ng-wizi-bulma/ng-wizi-bulma';`
+In your main scss file, replace `@import '~@oengus/ng-wizi-bulma/ng-wizi-bulma';` with `@import 'node_modules/@oengus/ng-wizi-bulma/ng-wizi-bulma';`
 
 # 12.0.0 (2021-05-31)
 
@@ -138,7 +138,7 @@ Thanks to ([@nathanbedford](https://github.com/nathanbedford)) for this work
 # 7.0.4 (2018-11-16)
 
 - Update to angular 7.0.4
-- Add new scss @import '~@wizishop/ng-wizi-bulma/ng-wizi-bulma'; to allow custom all color from bulma
+- Add new scss @import '~@oengus/ng-wizi-bulma/ng-wizi-bulma'; to allow custom all color from bulma
 - Move from bulma-switch / bulma-pageloader to bulma-extensions to avoid some error message
 - Update fontawesome to last 5.5.0 version
 
@@ -153,7 +153,7 @@ Thanks to ([@nathanbedford](https://github.com/nathanbedford)) for this work
 
 # 5.0.0 (2018-09-14)
 
-- package name changed. It's now under the scope @wizishop. Then to install it run `npm i @wizishop/ng-wizi-bulma`
+- package name changed. It's now under the scope @wizishop. Then to install it run `npm i @oengus/ng-wizi-bulma`
 
 # 4.0.7 (2018-08-29)
 

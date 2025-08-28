@@ -14,6 +14,6 @@ function ScssBundlePlugin(options) {
 
 new ScssBundlePlugin({
   glob: './projects/ng-wizi-bulma/src/**/*.scss',
-  paths: ['./dist/@wizishop/ng-wizi-bulma/ng-wizi-bulma.scss'],
+  paths: ['./dist/@oengus/ng-wizi-bulma/ng-wizi-bulma.scss'],
   scss: ['colors']
 });
