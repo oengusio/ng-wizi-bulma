@@ -254,7 +254,7 @@ export class NwbDatePickerComponent implements AfterViewInit, OnDestroy {
 
     this.bulmaCalendar.on('clear', () => {
       this.ngZone.run(() => {
-        this.clear.next(true);
+        this.clear.emit(true);
       });
     });
 

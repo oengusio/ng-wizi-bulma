@@ -64,7 +64,7 @@ export class NwbDialogComponent<T> implements OnInit {
 
   ngOnInit() {
     this.open = true;
-    this.ready.next(true);
+    this.ready.emit(true);
   }
 
   @HostListener('document:keydown.escape')

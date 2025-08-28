@@ -1,6 +1,6 @@
 {
   "name": "@oengus/ng-wizi-bulma",
-  "version": "18.0.0",
+  "version": "20.0.0",
   "description": "Angular Components using Bulma.io css",
   "repository": {
     "type": "git",
@@ -18,10 +18,10 @@
   },
   "homepage": "https://ng-wizi-bulma.firebaseapp.com",
   "peerDependencies": {
-    "@angular/animations": ">=18.0.0",
-    "@angular/cdk": ">=18.0.0",
-    "@angular/common": ">=18.0.0",
-    "@angular/core": ">=18.0.0",
+    "@angular/animations": ">=20.0.0",
+    "@angular/cdk": ">=20.0.0",
+    "@angular/common": ">=20.0.0",
+    "@angular/core": ">=20.0.0",
     "bulma": "^0.9.4",
     "bulma-extensions": "^6.2.7"
   },
