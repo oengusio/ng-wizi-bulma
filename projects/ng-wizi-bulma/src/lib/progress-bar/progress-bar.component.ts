@@ -15,22 +15,23 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
  * <nwb-progress-bar> component.
  */
 @Component({
-  selector: 'nwb-progress-bar',
-  host: {
-    role: 'progressbar',
-    'aria-valuemin': '0',
-    'aria-valuemax': '100',
-    '[attr.aria-valuenow]': 'value',
-    '[attr.mode]': 'mode',
-    '[class.is-primary]': 'color == "primary"',
-    '[class.is-info]': 'color == "info"',
-    '[class.is-warning]': 'color == "warning"',
-    '[class.is-danger]': 'color == "danger"',
-    class: 'nwb-progress-bar'
-  },
-  templateUrl: './progress-bar.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+    selector: 'nwb-progress-bar',
+    host: {
+        role: 'progressbar',
+        'aria-valuemin': '0',
+        'aria-valuemax': '100',
+        '[attr.aria-valuenow]': 'value',
+        '[attr.mode]': 'mode',
+        '[class.is-primary]': 'color == "primary"',
+        '[class.is-info]': 'color == "info"',
+        '[class.is-warning]': 'color == "warning"',
+        '[class.is-danger]': 'color == "danger"',
+        class: 'nwb-progress-bar'
+    },
+    templateUrl: './progress-bar.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NwbProgressBarComponent {
   /** Color of the progress bar. */

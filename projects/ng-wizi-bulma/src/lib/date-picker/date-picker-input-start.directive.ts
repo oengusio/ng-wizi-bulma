@@ -5,14 +5,15 @@ import { NwbDatePickerComponent } from './date-picker.component';
 import { NwbDatePickerInputBaseDirective } from './date-picker-input-base.directive';
 
 @Directive({
-  selector: 'input[nwbDatepickerStart]',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: NwbDatePickerInputStartDirective,
-      multi: true
-    }
-  ]
+    selector: 'input[nwbDatepickerStart]',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: NwbDatePickerInputStartDirective,
+            multi: true
+        }
+    ],
+    standalone: false
 })
 export class NwbDatePickerInputStartDirective extends NwbDatePickerInputBaseDirective {
   /** The datepicker that this input is associated with. */

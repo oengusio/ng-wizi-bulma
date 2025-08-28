@@ -15,24 +15,19 @@ import {
 import { animate, AnimationEvent, keyframes, style, transition, trigger } from '@angular/animations';
 
 @Component({
-  selector: 'nwb-dialog',
-  templateUrl: './dialog.component.html',
-  host: {
-    class: 'nwb-dialog'
-  },
-  encapsulation: ViewEncapsulation.None,
-  animations: [
-    trigger('modalState', [
-      transition(
-        'void => active',
-        animate('200ms', keyframes([style({ opacity: '0', top: '5%', offset: 0 }), style({ opacity: '1', top: '0', offset: 1 })]))
-      ),
-      transition(
-        'active => inactive',
-        animate('200ms', keyframes([style({ opacity: '1', offset: 0 }), style({ opacity: '0', top: '5%', offset: 1 })]))
-      )
-    ])
-  ]
+    selector: 'nwb-dialog',
+    templateUrl: './dialog.component.html',
+    host: {
+        class: 'nwb-dialog'
+    },
+    encapsulation: ViewEncapsulation.None,
+    animations: [
+        trigger('modalState', [
+            transition('void => active', animate('200ms', keyframes([style({ opacity: '0', top: '5%', offset: 0 }), style({ opacity: '1', top: '0', offset: 1 })]))),
+            transition('active => inactive', animate('200ms', keyframes([style({ opacity: '1', offset: 0 }), style({ opacity: '0', top: '5%', offset: 1 })])))
+        ])
+    ],
+    standalone: false
 })
 export class NwbDialogComponent<T> implements OnInit {
   @ViewChild('componentSection', { read: ViewContainerRef, static: true })

@@ -4,19 +4,20 @@ import { NwbOptionComponent } from './option.component';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'nwb-dropdown',
-  templateUrl: './dropdown.component.html',
-  host: {
-    class: 'nwb-dropdown',
-  },
-  encapsulation: ViewEncapsulation.None,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: NwbDropdownComponent,
-      multi: true,
+    selector: 'nwb-dropdown',
+    templateUrl: './dropdown.component.html',
+    host: {
+        class: 'nwb-dropdown',
     },
-  ],
+    encapsulation: ViewEncapsulation.None,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: NwbDropdownComponent,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class NwbDropdownComponent implements ControlValueAccessor {
   @Input()

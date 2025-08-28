@@ -4,12 +4,13 @@ import { finalize } from 'rxjs/operators';
 import { NwbFoundRow, NwbModalSearchConfig } from './modal-search.service';
 
 @Component({
-  selector: 'nwb-modal-search',
-  templateUrl: './modal-search.component.html',
-  host: {
-    class: 'nwb-modal-search',
-  },
-  encapsulation: ViewEncapsulation.None,
+    selector: 'nwb-modal-search',
+    templateUrl: './modal-search.component.html',
+    host: {
+        class: 'nwb-modal-search',
+    },
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NwbModalSearchComponent implements AfterViewInit {
   selectedValue$ = new Subject<NwbFoundRow>();

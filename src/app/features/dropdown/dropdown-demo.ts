@@ -3,8 +3,9 @@ import { NwbDialogService, NwbDropdownConfig } from 'projects/ng-wizi-bulma/src/
 import { Observable } from 'rxjs';
 
 @Component({
-  providers: [],
-  templateUrl: './dropdown-demo.html'
+    providers: [],
+    templateUrl: './dropdown-demo.html',
+    standalone: false
 })
 export class DropdownDemo {
   gaming = 'nes';

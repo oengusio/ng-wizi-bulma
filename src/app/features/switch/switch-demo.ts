@@ -2,8 +2,9 @@ import { UntypedFormBuilder, FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
-  providers: [],
-  templateUrl: './switch-demo.html',
+    providers: [],
+    templateUrl: './switch-demo.html',
+    standalone: false
 })
 export class SwitchDemo {
   sample1Value = true;

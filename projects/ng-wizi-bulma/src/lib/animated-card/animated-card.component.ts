@@ -1,11 +1,12 @@
 import { OnInit, ElementRef, Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'div[nwbAnimatedCardClosed], div[nwbAnimatedCardOpened]',
-  template: `
+    selector: 'div[nwbAnimatedCardClosed], div[nwbAnimatedCardOpened]',
+    template: `
     <ng-content></ng-content>
   `,
-  encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NwbAnimatedCardComponent implements OnInit {
   constructor(private elementRef: ElementRef) {

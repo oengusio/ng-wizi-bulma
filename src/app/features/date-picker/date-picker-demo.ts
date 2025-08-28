@@ -3,8 +3,9 @@ import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms
 import { NwbAlertService, NwbDatePickerOptions } from 'projects/ng-wizi-bulma/src/public_api';
 
 @Component({
-  providers: [],
-  templateUrl: './date-picker-demo.html',
+    providers: [],
+    templateUrl: './date-picker-demo.html',
+    standalone: false
 })
 export class DatePickerDemo {
   myDateForm: UntypedFormGroup;

@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { NwbPageEvent } from 'projects/ng-wizi-bulma/src/public_api';
 
 @Component({
-  providers: [],
-  templateUrl: './paginator-demo.html'
+    providers: [],
+    templateUrl: './paginator-demo.html',
+    standalone: false
 })
 export class PaginatorDemo {
   length = 10000;

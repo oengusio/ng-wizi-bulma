@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { ModalSearchService } from '../../services/modal-search.service';
 
 @Component({
-  providers: [],
-  templateUrl: './modal-search-demo.html'
+    providers: [],
+    templateUrl: './modal-search-demo.html',
+    standalone: false
 })
 export class ModalSearchDemo {
   constructor(public modalSearchService: ModalSearchService) {}

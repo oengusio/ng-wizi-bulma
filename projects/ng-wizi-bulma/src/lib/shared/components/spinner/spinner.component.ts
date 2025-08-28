@@ -1,12 +1,13 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'nwb-spinner',
-  templateUrl: './spinner.component.html',
-  host: {
-    class: 'nwb-spinner'
-  },
-  encapsulation: ViewEncapsulation.None
+    selector: 'nwb-spinner',
+    templateUrl: './spinner.component.html',
+    host: {
+        class: 'nwb-spinner'
+    },
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NwbSpinnerComponent implements OnInit {
   @Input()

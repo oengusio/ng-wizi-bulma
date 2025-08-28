@@ -3,7 +3,8 @@ import { Directive, ElementRef, Input } from '@angular/core';
 import { NwbDatePickerInputBaseDirective } from './date-picker-input-base.directive';
 
 @Directive({
-  selector: 'input[nwbDateType]',
+    selector: 'input[nwbDateType]',
+    standalone: false
 })
 export class NwbDatePickerInputDateTypeDirective extends NwbDatePickerInputBaseDirective {
   @Input() override nwbDateType;

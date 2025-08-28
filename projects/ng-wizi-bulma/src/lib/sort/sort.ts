@@ -34,8 +34,9 @@ export interface Sort {
 }
 
 @Directive({
-  selector: '[nwbSort]',
-  exportAs: 'nwbSort'
+    selector: '[nwbSort]',
+    exportAs: 'nwbSort',
+    standalone: false
 })
 export class NwbSort implements OnChanges, OnDestroy {
   /** Collection of all registered sortables that this directive manages. */

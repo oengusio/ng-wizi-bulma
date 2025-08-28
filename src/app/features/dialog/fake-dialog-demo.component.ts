@@ -1,8 +1,8 @@
 import { Component, ElementRef, EventEmitter, ViewChild } from '@angular/core';
 
 @Component({
-  providers: [],
-  template: `
+    providers: [],
+    template: `
     <div class="field">
       <label class="label">Name</label>
       <p class="control">
@@ -17,7 +17,8 @@ import { Component, ElementRef, EventEmitter, ViewChild } from '@angular/core';
         <textarea class="textarea" placeholder="Other"></textarea>
       </p>
     </div>
-  `
+  `,
+    standalone: false
 })
 export class FakeDialogDemoComponent {
   @ViewChild('myInput', { static: true })

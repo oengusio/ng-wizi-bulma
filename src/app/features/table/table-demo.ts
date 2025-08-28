@@ -13,9 +13,10 @@ import {
 } from 'projects/ng-wizi-bulma/src/public_api';
 
 @Component({
-  providers: [],
-  templateUrl: './table-demo.html',
-  styleUrls: ['./table-demo.scss']
+    providers: [],
+    templateUrl: './table-demo.html',
+    styleUrls: ['./table-demo.scss'],
+    standalone: false
 })
 export class TableDemo implements OnInit {
   displayedColumns: string[] = ['created', 'state', 'number', 'title'];

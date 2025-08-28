@@ -4,36 +4,28 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { animate, AnimationEvent, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
-  selector: 'nwb-snack-bar',
-  templateUrl: './snackbar.component.html',
-  host: {
-    class: 'nwb-snack-bar'
-  },
-  encapsulation: ViewEncapsulation.None,
-  animations: [
-    trigger('state', [
-      state(
-        'void',
-        style({
-          bottom: '-100px'
-        })
-      ),
-      state(
-        'inactive',
-        style({
-          bottom: '-100px'
-        })
-      ),
-      state(
-        'active',
-        style({
-          bottom: '0px'
-        })
-      ),
-      transition('void => active', animate(300)),
-      transition('active => inactive', animate(300))
-    ])
-  ]
+    selector: 'nwb-snack-bar',
+    templateUrl: './snackbar.component.html',
+    host: {
+        class: 'nwb-snack-bar'
+    },
+    encapsulation: ViewEncapsulation.None,
+    animations: [
+        trigger('state', [
+            state('void', style({
+                bottom: '-100px'
+            })),
+            state('inactive', style({
+                bottom: '-100px'
+            })),
+            state('active', style({
+                bottom: '0px'
+            })),
+            transition('void => active', animate(300)),
+            transition('active => inactive', animate(300))
+        ])
+    ],
+    standalone: false
 })
 export class NwbSnackbarComponent implements OnInit {
   config: NwbSnackbarConfig;

@@ -1,7 +1,8 @@
 import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
-  selector: '[nwbToolTip]'
+    selector: '[nwbToolTip]',
+    standalone: false
 })
 export class NwbToolTipDirective {
   @Input()

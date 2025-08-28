@@ -2,8 +2,8 @@ import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, OnIn
 import { NwbTabComponent } from './tab.component';
 
 @Component({
-  selector: 'nwb-tabs',
-  template: `
+    selector: 'nwb-tabs',
+    template: `
     <div
       class="tabs
     {{ alignment && 'is-' + alignment }}
@@ -26,6 +26,7 @@ import { NwbTabComponent } from './tab.component';
     </div>
     <ng-content></ng-content>
   `,
+    standalone: false
 })
 export class NwbTabsComponent implements OnInit, AfterContentInit {
   /** IE [box]="true" **/

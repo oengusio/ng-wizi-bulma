@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { NwbSnackbarConfig, NwbSnackbarService } from 'projects/ng-wizi-bulma/src/public_api';
 
 @Component({
-  providers: [],
-  templateUrl: './snackbar-demo.html'
+    providers: [],
+    templateUrl: './snackbar-demo.html',
+    standalone: false
 })
 export class SnackbarDemo {
   snackBarNewVersionConfig: NwbSnackbarConfig = {

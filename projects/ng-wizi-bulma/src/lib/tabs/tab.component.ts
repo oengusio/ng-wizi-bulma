@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'nwb-tab',
-  template: `
+    selector: 'nwb-tab',
+    template: `
     <ng-content *ngIf="isSelected">
     </ng-content>
-  `
+  `,
+    standalone: false
 })
 export class NwbTabComponent {
   @Input()

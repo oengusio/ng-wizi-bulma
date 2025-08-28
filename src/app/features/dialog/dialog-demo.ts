@@ -4,8 +4,9 @@ import { FakeDialogDemoComponent } from './fake-dialog-demo.component';
 import { User } from './edit-user-dialog-demo.component';
 
 @Component({
-  providers: [],
-  templateUrl: './dialog-demo.html'
+    providers: [],
+    templateUrl: './dialog-demo.html',
+    standalone: false
 })
 export class DialogDemo {
   dialogConfig: NwbDialogConfig = {

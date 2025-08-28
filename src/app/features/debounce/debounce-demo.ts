@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  providers: [],
-  templateUrl: './debounce-demo.html'
+    providers: [],
+    templateUrl: './debounce-demo.html',
+    standalone: false
 })
 export class DebounceDemo {
   inputValue = 'Default Value';

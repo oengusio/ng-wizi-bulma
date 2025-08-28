@@ -47,13 +47,14 @@ export class NwbPageEvent {
  * navigational button to go to the previous or next page.
  */
 @Component({
-  selector: 'nwb-paginator',
-  templateUrl: 'paginator.component.html',
-  host: {
-    class: 'nwb-paginator'
-  },
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'nwb-paginator',
+    templateUrl: 'paginator.component.html',
+    host: {
+        class: 'nwb-paginator'
+    },
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NwbPaginatorComponent implements OnInit, OnDestroy {
   private _initialized: boolean;

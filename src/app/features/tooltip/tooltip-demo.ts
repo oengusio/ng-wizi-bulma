@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  providers: [],
-  templateUrl: './tooltip-demo.html'
+    providers: [],
+    templateUrl: './tooltip-demo.html',
+    standalone: false
 })
 export class TooltipDemo {
   sample1 = `<button class="button" nwbToolTip="My tooltip" nwbToolTipPosition="bottom">Bottom</button>`;

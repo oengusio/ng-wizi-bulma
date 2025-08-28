@@ -2,8 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild 
 import { NwbDialogComponent, NwbDialogService } from 'projects/ng-wizi-bulma/src/public_api';
 
 @Component({
-  selector: 'demo-add-user-dialog',
-  templateUrl: './edit-user-dialog-demo.component.html'
+    selector: 'demo-add-user-dialog',
+    templateUrl: './edit-user-dialog-demo.component.html',
+    standalone: false
 })
 export class EditUserDialogDemoComponent implements OnInit {
   private _id: number;

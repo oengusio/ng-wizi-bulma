@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
-  selector: 'demo-tabs',
-  templateUrl: './tabs-demo.component.html',
-  styleUrls: []
+    selector: 'demo-tabs',
+    templateUrl: './tabs-demo.component.html',
+    styleUrls: [],
+    standalone: false
 })
 export class TabsDemo implements OnInit {
   tabBasicIndex = 2;

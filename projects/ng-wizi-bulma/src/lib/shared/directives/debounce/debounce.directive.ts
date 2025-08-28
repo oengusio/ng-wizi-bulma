@@ -4,14 +4,15 @@ import { Subscription, fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Directive({
-  selector: '[nwbDebounce]',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: NwbDebounceDirective,
-      multi: true
-    }
-  ]
+    selector: '[nwbDebounce]',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: NwbDebounceDirective,
+            multi: true
+        }
+    ],
+    standalone: false
 })
 export class NwbDebounceDirective implements OnInit, ControlValueAccessor, OnDestroy {
   @Input()

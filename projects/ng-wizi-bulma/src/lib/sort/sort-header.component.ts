@@ -28,9 +28,10 @@ export interface ArrowViewStateTransition {
 }
 
 @Component({
-  selector: '[nwb-sort-header]',
-  templateUrl: './sort-header.component.html',
-  animations: [nwbSortAnimations.arrowDirection, nwbSortAnimations.arrowOpacity, nwbSortAnimations.arrowPosition],
+    selector: '[nwb-sort-header]',
+    templateUrl: './sort-header.component.html',
+    animations: [nwbSortAnimations.arrowDirection, nwbSortAnimations.arrowOpacity, nwbSortAnimations.arrowPosition],
+    standalone: false
 })
 export class NwbSortHeaderComponent implements NwbSortable, OnInit, OnDestroy {
   private _rerenderSubscription: Subscription;

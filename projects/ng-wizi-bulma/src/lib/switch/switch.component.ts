@@ -2,14 +2,15 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'nwb-switch',
-  templateUrl: './switch.component.html',
-  styleUrls: ['./switch.component.scss'],
-  host: {
-    class: 'nwb-switch',
-  },
-  encapsulation: ViewEncapsulation.None,
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: NwbSwitchComponent, multi: true }],
+    selector: 'nwb-switch',
+    templateUrl: './switch.component.html',
+    styleUrls: ['./switch.component.scss'],
+    host: {
+        class: 'nwb-switch',
+    },
+    encapsulation: ViewEncapsulation.None,
+    providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: NwbSwitchComponent, multi: true }],
+    standalone: false
 })
 export class NwbSwitchComponent implements ControlValueAccessor {
   @Input()

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  providers: [],
-  templateUrl: './progress-bar-demo.html'
+    providers: [],
+    templateUrl: './progress-bar-demo.html',
+    standalone: false
 })
 export class ProgressBarDemo {
   color: 'primary' | 'info' | 'warning' | 'danger'  = 'primary';

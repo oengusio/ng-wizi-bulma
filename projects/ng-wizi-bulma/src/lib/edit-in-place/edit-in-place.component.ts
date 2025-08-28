@@ -14,16 +14,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'nwb-edit-in-place',
-  templateUrl: './edit-in-place.component.html',
-  encapsulation: ViewEncapsulation.None,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: NwbEditInPlaceComponent,
-      multi: true,
-    },
-  ],
+    selector: 'nwb-edit-in-place',
+    templateUrl: './edit-in-place.component.html',
+    encapsulation: ViewEncapsulation.None,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: NwbEditInPlaceComponent,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class NwbEditInPlaceComponent implements ControlValueAccessor, AfterViewChecked, OnChanges {
   @Input()

@@ -20,10 +20,11 @@ import { NwbDatePickerIntl } from './date-picker-intl';
 declare const bulmaCalendar: any;
 
 @Component({
-  selector: 'nwb-date-picker',
-  templateUrl: './date-picker.component.html',
-  styleUrls: ['./date-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nwb-date-picker',
+    templateUrl: './date-picker.component.html',
+    styleUrls: ['./date-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NwbDatePickerComponent implements AfterViewInit, OnDestroy {
   @Input() options: NwbDatePickerOptions = {};

@@ -72,3 +72,6 @@ export class AppModule {
 ## How to use it
 
 If you want to see how components work, just see the demo file : `src/demo-app/demo-app/demo-app.ts`
+
+## How to upgrade?
+`ng update @angular/core @angular/cli @angular/cdk @angular-devkit/build-angular @angular-eslint/schematic`

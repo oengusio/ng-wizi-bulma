@@ -7,7 +7,8 @@ import { Directive, ElementRef, EventEmitter, Input, Output } from '@angular/cor
  *
  */
 @Directive({
-  selector: 'nwb-option'
+    selector: 'nwb-option',
+    standalone: false
 })
 export class NwbOptionComponent {
   _selected: boolean = false;

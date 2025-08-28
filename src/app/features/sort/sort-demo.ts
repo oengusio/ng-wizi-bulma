@@ -10,9 +10,10 @@ export interface Dessert {
 }
 
 @Component({
-  providers: [],
-  templateUrl: './sort-demo.html',
-  styleUrls: ['./sort-demo.scss']
+    providers: [],
+    templateUrl: './sort-demo.html',
+    styleUrls: ['./sort-demo.scss'],
+    standalone: false
 })
 export class SortDemo {
   desserts: Dessert[] = [

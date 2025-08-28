@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  providers: [],
-  templateUrl: './animated-card-demo.html'
+    providers: [],
+    templateUrl: './animated-card-demo.html',
+    standalone: false
 })
 export class AnimatedCardDemo {
   sample1 = `
