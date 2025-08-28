@@ -3,36 +3,41 @@
   <ul class="pagination-list">
     <li>
       <span>{{_intl.itemsPerPageLabel}}
-        <strong *ngIf="_displayedPageSizeOptions.length <= 1"
-                class="nwb-single-page-option">{{pageSize}}</strong>
+        @if (_displayedPageSizeOptions.length <= 1) {
+          <strong
+          class="nwb-single-page-option">{{pageSize}}</strong>
+        }
       </span>
 
     </li>
-    <li *ngIf="_displayedPageSizeOptions.length > 1">
-      <div class="dropdown"
-           [ngClass]="{'is-active':dropDownIsActive}"
-
-           (click)="dropDownIsActive = !dropDownIsActive"
-      >
-        <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-            <span>{{pageSize}}</span>
-            <span class="icon is-small">
-        <i class="fa fa-sort-down"></i>
-      </span>
-          </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
-            <a *ngFor="let pageSizeOption of _displayedPageSizeOptions"
-               (click)="changePageSize(pageSizeOption)"
-               class="dropdown-item">
-              {{pageSizeOption}}
-            </a>
+    @if (_displayedPageSizeOptions.length > 1) {
+      <li>
+        <div class="dropdown"
+          [ngClass]="{'is-active':dropDownIsActive}"
+          (click)="dropDownIsActive = !dropDownIsActive"
+          >
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span>{{pageSize}}</span>
+              <span class="icon is-small">
+                <i class="fa fa-sort-down"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              @for (pageSizeOption of _displayedPageSizeOptions; track pageSizeOption) {
+                <a
+                  (click)="changePageSize(pageSizeOption)"
+                  class="dropdown-item">
+                  {{pageSizeOption}}
+                </a>
+              }
+            </div>
           </div>
         </div>
-      </div>
-    </li>
+      </li>
+    }
 
     <li>
       <span class="nwb-paginator-range-label">

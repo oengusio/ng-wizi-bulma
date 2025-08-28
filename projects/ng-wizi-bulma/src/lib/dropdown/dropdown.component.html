@@ -5,26 +5,31 @@
       aria-haspopup="true"
       aria-controls="dropdown-menu"
       [disabled]="disabled"
-    >
+      >
       <span [innerHTML]="currentText | safeHtml"></span>
       <span class="icon is-small">
         <i class="fa fa-angle-down"></i>
       </span>
     </button>
   </div>
-  <div class="dropdown-menu" role="menu" *ngIf="isActive">
-    <div class="dropdown-content">
-      <ng-container *ngFor="let option of _options">
-        <hr class="dropdown-divider" *ngIf="option.divider" />
-        <a
-          *ngIf="!option.divider"
-          class="dropdown-item"
-          [ngClass]="{ 'is-active': option.selected, 'is-disabled': option.disabled }"
-          (click)="selectOption(option)"
-          [innerHTML]="option.text | safeHtml"
-        >
-        </a>
-      </ng-container>
+  @if (isActive) {
+    <div class="dropdown-menu" role="menu">
+      <div class="dropdown-content">
+        @for (option of _options; track option) {
+          @if (option.divider) {
+            <hr class="dropdown-divider" />
+          }
+          @if (!option.divider) {
+            <a
+              class="dropdown-item"
+              [ngClass]="{ 'is-active': option.selected, 'is-disabled': option.disabled }"
+              (click)="selectOption(option)"
+              [innerHTML]="option.text | safeHtml"
+              >
+            </a>
+          }
+        }
+      </div>
     </div>
-  </div>
+  }
 </div>

@@ -20,7 +20,9 @@
   <div class="card-content">
     <div class="content">
       <button class="button" (click)="openDialogFromComponent()">Open Dialog From Component</button>
-      <p *ngIf="fakeComponentValue.length">Your name is: <b>{{fakeComponentValue}}</b></p>
+      @if (fakeComponentValue.length) {
+        <p>Your name is: <b>{{fakeComponentValue}}</b></p>
+      }
     </div>
   </div>
 </div>
@@ -33,7 +35,9 @@
   <div class="card-content">
     <div class="content">
       <button class="button" (click)="openDialogFromComponentWithSpinner()">Open Dialog From Component</button>
-      <p *ngIf="fakeComponent2Value.length">Your name is: <b>{{fakeComponent2Value}}</b></p>
+      @if (fakeComponent2Value.length) {
+        <p>Your name is: <b>{{fakeComponent2Value}}</b></p>
+      }
     </div>
   </div>
 </div>
@@ -49,14 +53,14 @@
     </div>
 
 
-    <demo-add-user-dialog
-      *ngIf="userId"
-      [id]="userId"
-      (userChange)="userChange($event)"
-      (close)="userId = null"
-    >
-
-    </demo-add-user-dialog>
+    @if (userId) {
+      <demo-add-user-dialog
+        [id]="userId"
+        (userChange)="userChange($event)"
+        (close)="userId = null"
+        >
+      </demo-add-user-dialog>
+    }
 
   </div>
 </div>

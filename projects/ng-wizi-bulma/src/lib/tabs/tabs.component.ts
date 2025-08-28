@@ -12,20 +12,24 @@ import { NwbTabComponent } from './tab.component';
     {{ toggle && 'is-toggle' }}
     {{ rounded && 'is-toggle-rounded' }}
     {{ fullwidth && 'is-fullwidth' }}"
-    >
+      >
       <ul>
-        <li *ngFor="let tab of tabList" [ngClass]="{ 'is-active': selectedIndex === tab.index }" (click)="select(tab.index)">
-          <a>
-            <span *ngIf="tab.icon" class="icon">
-              <i class="{{ tab.icon }}"></i>
-            </span>
-            <span>{{ tab.label }}</span>
-          </a>
-        </li>
+        @for (tab of tabList; track tab) {
+          <li [ngClass]="{ 'is-active': selectedIndex === tab.index }" (click)="select(tab.index)">
+            <a>
+              @if (tab.icon) {
+                <span class="icon">
+                  <i class="{{ tab.icon }}"></i>
+                </span>
+              }
+              <span>{{ tab.label }}</span>
+            </a>
+          </li>
+        }
       </ul>
     </div>
     <ng-content></ng-content>
-  `,
+    `,
     standalone: false
 })
 export class NwbTabsComponent implements OnInit, AfterContentInit {

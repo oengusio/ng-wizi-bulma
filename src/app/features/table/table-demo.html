@@ -7,84 +7,90 @@
   <div class="card-content">
     <div class="content">
       <p>This table uses the <a href="https://material.angular.io/cdk/table/overview" target="_blank">table
-        component</a>
-        from angular CDK</p>
-      <p>
-        It's also using our <strong>NwbFilterRoutingBuilder</strong> service which allow you to mix data table's filters
-        with angular router.
-        Go ahead play with the filters (sort, query, page) and refresh the page.
+      component</a>
+    from angular CDK</p>
+    <p>
+      It's also using our <strong>NwbFilterRoutingBuilder</strong> service which allow you to mix data table's filters
+      with angular router.
+      Go ahead play with the filters (sort, query, page) and refresh the page.
+    </p>
+
+    <div class="field">
+      <p class="control">
+        <input
+          class="input"
+          [ngClass]="{'is-warning': filterGroup.get('q')}"
+          type="text"
+          placeholder="Recherche"
+          [ngModel]="filterGroup.get('q')"
+          (ngModelChange)="filterGroup.setValues({pageIndex:0,q: $event})"
+          nwbDebounce
+          >
       </p>
-
-      <div class="field">
-        <p class="control">
-          <input
-            class="input"
-            [ngClass]="{'is-warning': filterGroup.get('q')}"
-            type="text"
-            placeholder="Recherche"
-            [ngModel]="filterGroup.get('q')"
-            (ngModelChange)="filterGroup.setValues({pageIndex:0,q: $event})"
-            nwbDebounce
-          >
-        </p>
-      </div>
+    </div>
 
 
-      <div class="example-container">
+    <div class="example-container">
 
 
+      @if (isLoadingResults || isRateLimitReached) {
         <div class="example-loading-shade"
-             *ngIf="isLoadingResults || isRateLimitReached">
-          <nwb-spinner *ngIf="isLoadingResults" color="#4baed0"></nwb-spinner>
-          <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
-            GitHub's API rate limit has been reached. It will be reset in one minute.
-          </div>
-        </div>
-
-        <div class="example-table-container">
-          <table class="table" cdk-table [dataSource]="data"
-                 nwbSort
-                 [nwbSortActive]="filterGroup.get('sort')" [nwbSortStart]="filterGroup.get('order')"
           >
-            <!-- Number Column -->
-            <ng-container cdkColumnDef="number">
-              <th cdk-header-cell *cdkHeaderCellDef>#</th>
-              <td cdk-cell *cdkCellDef="let row">{{row.number}}</td>
-            </ng-container>
-
-            <!-- Title Column -->
-            <ng-container cdkColumnDef="title">
-              <th cdk-header-cell *cdkHeaderCellDef nwb-sort-header>Title</th>
-              <td cdk-cell *cdkCellDef="let row">{{row.title}}</td>
-            </ng-container>
-
-            <!-- State Column -->
-            <ng-container cdkColumnDef="state">
-              <th cdk-header-cell *cdkHeaderCellDef>State</th>
-              <td cdk-cell *cdkCellDef="let row">{{row.state}}</td>
-            </ng-container>
-
-            <!-- Created Column -->
-            <ng-container cdkColumnDef="created">
-              <th cdk-header-cell *cdkHeaderCellDef nwb-sort-header>
-                Created
-              </th>
-              <td cdk-cell *cdkCellDef="let row">{{row.created_at | date}}</td>
-            </ng-container>
-
-            <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
-            <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
+          @if (isLoadingResults) {
+            <nwb-spinner color="#4baed0"></nwb-spinner>
+          }
+          @if (isRateLimitReached) {
+            <div class="example-rate-limit-reached">
+              GitHub's API rate limit has been reached. It will be reset in one minute.
+            </div>
+          }
         </div>
+      }
 
-        <nwb-paginator
-          [length]="resultsLength"
-          [pageIndex]="filterGroup.get('pageIndex')"
-          [pageSize]="30"
-        ></nwb-paginator>
+      <div class="example-table-container">
+        <table class="table" cdk-table [dataSource]="data"
+          nwbSort
+          [nwbSortActive]="filterGroup.get('sort')" [nwbSortStart]="filterGroup.get('order')"
+          >
+          <!-- Number Column -->
+          <ng-container cdkColumnDef="number">
+            <th cdk-header-cell *cdkHeaderCellDef>#</th>
+            <td cdk-cell *cdkCellDef="let row">{{row.number}}</td>
+          </ng-container>
+
+          <!-- Title Column -->
+          <ng-container cdkColumnDef="title">
+            <th cdk-header-cell *cdkHeaderCellDef nwb-sort-header>Title</th>
+            <td cdk-cell *cdkCellDef="let row">{{row.title}}</td>
+          </ng-container>
+
+          <!-- State Column -->
+          <ng-container cdkColumnDef="state">
+            <th cdk-header-cell *cdkHeaderCellDef>State</th>
+            <td cdk-cell *cdkCellDef="let row">{{row.state}}</td>
+          </ng-container>
+
+          <!-- Created Column -->
+          <ng-container cdkColumnDef="created">
+            <th cdk-header-cell *cdkHeaderCellDef nwb-sort-header>
+              Created
+            </th>
+            <td cdk-cell *cdkCellDef="let row">{{row.created_at | date}}</td>
+          </ng-container>
+
+          <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+          <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
       </div>
+
+      <nwb-paginator
+        [length]="resultsLength"
+        [pageIndex]="filterGroup.get('pageIndex')"
+        [pageSize]="30"
+      ></nwb-paginator>
     </div>
   </div>
+</div>
 
 
 </div>

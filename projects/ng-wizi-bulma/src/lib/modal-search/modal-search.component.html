@@ -1,36 +1,46 @@
 <div class="modal {{(config.extraClasses) ? ' ' + config.extraClasses : ''}}" [ngClass]="{'is-active': isActive}">
   <div class="modal-background" (click)="close()"></div>
   <div class="modal-content modal-card" (click)="focusInputSearch()" [ngClass]="{'is-active': isActive}">
-    <header #header class="modal-card-head" *ngIf="config.hasHeader">
-    </header>
+    @if (config.hasHeader) {
+      <header #header class="modal-card-head">
+      </header>
+    }
     <section class="modal-card-body" [ngClass]="{'has-no-header':!config.hasHeader, 'has-no-footer':!config.hasFooter}">
       <div class="field nwb-modal-search">
         <div class="control has-icons-left">
           <input [ngModel]="searchString" (ngModelChange)="searching($event)"
-                 (keydown)="inputOnKeyDown($event)"
-                 #inputSearch
-                 class="input"
-                 type="text"
-                 placeholder="{{config.inputPlaceholder}}">
+            (keydown)="inputOnKeyDown($event)"
+            #inputSearch
+            class="input"
+            type="text"
+            placeholder="{{config.inputPlaceholder}}">
           <span class="icon is-large is-left">
-        <i class="fa fa-search"></i>
-      </span>
+            <i class="fa fa-search"></i>
+          </span>
         </div>
-        <div class="nwb-modal-search-found-rows" *ngIf="!isSearching && foundRows.length > 0">
-          <a *ngFor="let row of foundRows; let i = index"
-             [ngClass]="{'selected': row.isSelectable && i === selectedFoundRow, 'not-selectable': !row.isSelectable, 'is-child':row.isChild, 'is-parent': row.isParent}"
-             (mousemove)="mouseMove()"
-             (mouseover)="mouseOver(i)"
-             (click)="selectValue()"
-             class="nwb-modal-search-row" [tabindex]="i"
-          >
-            <div class="nwb-modal-search-row-content" [innerHTML]="row.text"></div>
-          </a>
-        </div>
-        <nwb-spinner *ngIf="isSearching"></nwb-spinner>
+        @if (!isSearching && foundRows.length > 0) {
+          <div class="nwb-modal-search-found-rows">
+            @for (row of foundRows; track row; let i = $index) {
+              <a
+                [ngClass]="{'selected': row.isSelectable && i === selectedFoundRow, 'not-selectable': !row.isSelectable, 'is-child':row.isChild, 'is-parent': row.isParent}"
+                (mousemove)="mouseMove()"
+                (mouseover)="mouseOver(i)"
+                (click)="selectValue()"
+                class="nwb-modal-search-row" [tabindex]="i"
+                >
+                <div class="nwb-modal-search-row-content" [innerHTML]="row.text"></div>
+              </a>
+            }
+          </div>
+        }
+        @if (isSearching) {
+          <nwb-spinner></nwb-spinner>
+        }
       </div>
     </section>
-    <footer #footer class="modal-card-foot" *ngIf="config.hasFooter">
-    </footer>
+    @if (config.hasFooter) {
+      <footer #footer class="modal-card-foot">
+      </footer>
+    }
   </div>
 </div>

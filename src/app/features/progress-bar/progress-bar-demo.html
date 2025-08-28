@@ -46,12 +46,14 @@
         </div>
       </div>
 
-      <div class="field" *ngIf="mode === 'determinate'">
-        <label class="label">Value</label>
-        <div class="control">
-          <input class="input" type="number" name="value" [(ngModel)]="value">
+      @if (mode === 'determinate') {
+        <div class="field">
+          <label class="label">Value</label>
+          <div class="control">
+            <input class="input" type="number" name="value" [(ngModel)]="value">
+          </div>
         </div>
-      </div>
+      }
 
 
 
