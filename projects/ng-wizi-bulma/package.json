@@ -4,7 +4,7 @@
   "description": "Angular Components using Bulma.io css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/WiziShop/ng-wizi-bulma.git"
+    "url": "https://github.com/oengusio/ng-wizi-bulma.git"
   },
   "keywords": [
     "angular",
@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WiziShop/ng-wizi-bulma/issues"
+    "url": "https://github.com/oengusio/ng-wizi-bulma/issues"
   },
   "homepage": "https://ng-wizi-bulma.firebaseapp.com",
   "peerDependencies": {
